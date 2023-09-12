@@ -1,5 +1,5 @@
 
-async function fetchRandomQuote() {
+async function RandomQuote() {
     try {
       const response = await fetch('https://type.fit/api/quotes');
       const data = await response.json();
@@ -8,10 +8,10 @@ async function fetchRandomQuote() {
       const quoteElement = document.querySelector('.quote p');
       quoteElement.textContent = randomQuote.text;
     } catch (error) {
-      console.error('Error fetching random quote:', error);
+      console.error('Error in getting random quote:', error);
     }
   }
   
   const newQuoteBtn = document.getElementById('new-quote-btn');
-  newQuoteBtn.addEventListener('click', fetchRandomQuote);
-  fetchRandomQuote();
+  newQuoteBtn.addEventListener('click', RandomQuote);
+  RandomQuote();
